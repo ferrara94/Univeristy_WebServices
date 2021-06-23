@@ -44,10 +44,18 @@ Classes which implements JPA interfaces have the **Repository** suffix and they 
 
 To view the results of web services, I used Postman.
 
+- [ ] **Add the Student by calling the Rest Service through Postman**
+
 ![image](https://user-images.githubusercontent.com/45211249/123134992-a0ca8b00-d451-11eb-9764-9554a6e40c01.png)
+
+- [ ] **Check all Students on Database **
 
 ![image](https://user-images.githubusercontent.com/45211249/123134899-8ee8e800-d451-11eb-828f-4ce07321387a.png)
 
+- [ ] **Retrieve all Students by calling the Rest Service through Postman**
+
 ![image](https://user-images.githubusercontent.com/45211249/123135042-ab852000-d451-11eb-8ed6-b46f94e2cba6.png)
+
+- [ ] **Delete the Student by calling the Rest Service through Postman**
 
 ![image](https://user-images.githubusercontent.com/45211249/123135063-af18a700-d451-11eb-907a-fef54b80e97f.png)
