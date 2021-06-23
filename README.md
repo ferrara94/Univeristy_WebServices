@@ -48,7 +48,7 @@ To view the results of web services, I used Postman.
 
 ![image](https://user-images.githubusercontent.com/45211249/123134992-a0ca8b00-d451-11eb-9764-9554a6e40c01.png)
 
-- [ ] **Check all Students on Database **
+- [ ] **Check all Students on Database**
 
 ![image](https://user-images.githubusercontent.com/45211249/123134899-8ee8e800-d451-11eb-828f-4ce07321387a.png)
 
