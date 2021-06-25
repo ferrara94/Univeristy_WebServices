@@ -47,7 +47,7 @@ where the *project* is located (into the project folder)
 
 Persistence is represented by the in-memory database called H2.
 
-Classes which implements JPA interfaces have the **Repository** suffix and they allow access to data.
+Classes which implements JPA interfaces have the **Repository** at the end of the name and they allow access to data.
 
 ![image](https://user-images.githubusercontent.com/45211249/123134081-b5f2ea00-d450-11eb-9120-ead98f2f1bb2.png)
 
