@@ -14,7 +14,7 @@ The project is a **SpringBoot** project, so most of the Configurations are provi
 
 #### > run app
 
-In my case, using Spring Tool Suit, to run my app open it and
+In my case, using Spring Tool Suit, to run my app I open it and
 ```
   right click on project + run as Spring Boot App
 ```
