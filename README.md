@@ -10,6 +10,8 @@ The Services are related to University World, but they are based on a limited nu
 
 The project is a **SpringBoot** project, so most of the Configurations are provided by default.
 
+**RequestsMappingUniversity.postman_collection** is a collection of RequestMapping in postman which you can use direclty to test the services.
+
 ---
 
 #### > run app
