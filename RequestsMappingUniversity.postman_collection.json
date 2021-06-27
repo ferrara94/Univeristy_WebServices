@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "64dc0b1e-bcee-4de4-8385-9d66ba7e6240",
+		"name": "RequestsMappingUniversity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "students",
+			"item": [
+				{
+					"name": "ADD_STUDENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idNumber\": 62,\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/student/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"student",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_STUDENTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/students/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MODIFY_STUDENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idNumber\": 1,\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1995-07-08T22:00:00.000+00:00\",\n    \"age\": 26,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/student/modify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"student",
+								"modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_STUDENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/students/student/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"student",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "faculties",
+			"item": [
+				{
+					"name": "GET_FACULTIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/faculties/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"faculties",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_FACULTY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"COMPUTER SCIENCE\",\n    \"description\": \"Cloud Computing course helps you master the core skill sets required to design and deploy dynamically scalable and reliable applications on three popular cloud platform providers: Microsoft Azure, AWS, and GCP.\",\n    \"curriculum\": \"\",\n    \"yearsOfStudy\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/faculties/faculty/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"faculties",
+								"faculty",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_FACULTY",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/faculties/faculty/delete/COMPUTER SCIENCE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"faculties",
+								"faculty",
+								"delete",
+								"COMPUTER SCIENCE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
