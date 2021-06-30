@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"idNumber\": 62,\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n}",
+							"raw": "{\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\",\n    \"university_id\": \"SALERNO\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -113,6 +113,17 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "ADD_STUDENTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -189,6 +200,94 @@
 								"faculty",
 								"delete",
 								"COMPUTER SCIENCE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "university",
+			"item": [
+				{
+					"name": "ADD_UNIVERSITY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"SALERNO\",\n    \"description\": \"The University of Salerno (“UNISA”)is ideally linked to the oldest academic institution in the Old Continent: the Schola Medica Salernitana. Founded in the eighth century AD, the School reached its peak between the 10th and 13th century.\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/universities/university/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"universities",
+								"university",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_UNIVERSITIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/students/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_UNIVERSITIES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"SALERNO\",\n        \"description\": \"The University of Salerno (“UNISA”)is ideally linked to the oldest academic institution in the Old Continent: the Schola Medica Salernitana. Founded in the eighth century AD, the School reached its peak between the 10th and 13th century.\"\n    },\n    {\n        \"name\": \"BENEVENTO\",\n        \"description\": \"The university of Benevento born as a branch of the University of Salerno and acquired full administrative and didactic autonomy starting from 1 January 1998 (DM 29 / 12/1997) as the University of Sannio of Benevento. It is made up of three Departments: Department of Law, Economics, Management and Quantitative Methods, Department of Engineering and Department of Sciences and Technologies.\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/universities/universities/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"universities",
+								"universities",
+								"add"
 							]
 						}
 					},
