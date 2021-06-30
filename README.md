@@ -47,7 +47,7 @@ where the *project* is located (into the project folder)
 
 #### > persistence & repository 
 
-Persistence is represented by the in-memory database called H2.
+Persistence is represented by the in-memory database called H2 Database.
 
 Classes which implements JPA interfaces have the **Repository** at the end of the name and they allow access to data.
 
