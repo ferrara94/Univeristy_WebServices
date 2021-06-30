@@ -55,7 +55,7 @@ Classes which implements JPA interfaces have the **Repository** at the end of th
 
 In addition, there are also functionalities related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
 
-![image](https://user-images.githubusercontent.com/45211249/123134081-b5f2ea00-d450-11eb-9120-ead98f2f1bb2.png)
+![image](https://user-images.githubusercontent.com/45211249/124036097-c4677580-d9fd-11eb-9eba-11f1dc784bbd.png)
 
 
 --- 
