@@ -53,7 +53,7 @@ Persistence is represented by the in-memory database called H2 Database.
 
 Classes which implements JPA interfaces have the **Repository** at the end of the name and they allow access to data.
 
-In addition, there are also functionality related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
+In addition, there are also functionalities related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
 
 ![image](https://user-images.githubusercontent.com/45211249/123134081-b5f2ea00-d450-11eb-9120-ead98f2f1bb2.png)
 
