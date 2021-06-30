@@ -2,8 +2,8 @@ package com.develop.webapp.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,16 +17,21 @@ public class Student implements Serializable{
 		
 	@Id
 	@GeneratedValue
+	@Column(name="STUDENT_ID")
 	private Long idNumber;
 	
 	private String name;
 	private String surname;
 	private Date birthDate;
 	private int age;
+	
 	private String university;
+
 	private String faculty;
+	
 	private Date yearOfRegistration;
 	
+    
 	public Student() {}
 	
 	public Student(String name, String surname, String university) {
@@ -34,7 +39,7 @@ public class Student implements Serializable{
 		this.surname = surname;
 		this.university = university;
 	}
-		
+			
 	public Student(Long id, String name, String surname, Date birthDate, int age, String university, String faculty,
 			Date yearOfRegistration) {
 		

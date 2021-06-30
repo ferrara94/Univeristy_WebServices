@@ -55,6 +55,12 @@ public class StudentServiceImpl implements StudentService {
 		return id;
 	}
 
+	@Override
+	public void addStudents(List<Student> students) {
+		studentRepository.saveAll(students);
+		
+	}
+
 	
 	
 	

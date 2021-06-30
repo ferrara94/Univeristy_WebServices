@@ -2,6 +2,7 @@ package com.develop.webapp.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -13,12 +14,15 @@ public class Faculty implements Serializable{
 	private static final long serialVersionUID = 4730522190457907955L;
 	
 	@Id
+	@Column(name = "FACULTY_NAME")
 	private String name;
 	@Id
+	@Column(name = "CURRICULUM")
 	private String curriculum;
 	
 	private String description;
 	private int yearsOfStudy;
+	
 			
 	public Faculty(String name, String description, String curriculum, int yearsOfStudy) {
 		super();
@@ -27,6 +31,7 @@ public class Faculty implements Serializable{
 		this.curriculum = curriculum;
 		this.yearsOfStudy = yearsOfStudy;
 	}
+	
 	
 	public Faculty() {}
 	
@@ -54,7 +59,8 @@ public class Faculty implements Serializable{
 	public void setYearsOfStudy(int yearsOfStudy) {
 		this.yearsOfStudy = yearsOfStudy;
 	}
-		
+
+	
 	
 	
 }

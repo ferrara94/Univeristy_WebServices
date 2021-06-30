@@ -112,6 +112,22 @@ public class StudentController {
 		
 	}
 	
+	@PostMapping(value = "add")
+	public ResponseEntity<List<Student>> addUniversity(@RequestBody List<Student> students) {
+		
+		if(students == null) {
+			return new ResponseEntity<List<Student>>(HttpStatus.NO_CONTENT);
+		}
+				
+		for(Student s: students)
+			s.setName(s.getName().toUpperCase());
+						
+		service.addStudents(students);
+		
+		return new ResponseEntity<List<Student>>(new HttpHeaders(), HttpStatus.CREATED);
+		
+	}
+	
 	@PutMapping(value = "student/modify")
 	public ResponseEntity<?> updateStudent(@RequestBody Student student ) {
 		

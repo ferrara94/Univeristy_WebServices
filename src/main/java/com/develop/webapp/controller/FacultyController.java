@@ -78,8 +78,7 @@ public class FacultyController {
 		if(faculty == null) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
-		else {
- 			
+		else { 		
 			ObjectMapper mapper = new ObjectMapper();
 			ObjectNode responseNode = mapper.createObjectNode();
 					

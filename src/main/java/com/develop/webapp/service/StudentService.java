@@ -19,6 +19,8 @@ public interface StudentService {
 	
 	public void addStudent(Student student);
 	
+	public void addStudents(List<Student> students);
+	
 	public Long deleteStudent(Long id);
 
 }
