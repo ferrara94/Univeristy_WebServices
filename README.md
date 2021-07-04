@@ -35,6 +35,7 @@ where the *project* is located (into the project folder)
 - [ ] Java 11
 - [ ] JPA
 - [ ] json format
+- [ ] Slf4j
 - [ ] H2 database
 - [ ] Spring Web Modules
 - [ ] Tomcat (provided by SpringBoot)
