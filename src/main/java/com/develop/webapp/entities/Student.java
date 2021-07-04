@@ -114,7 +114,7 @@ public class Student implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Student [idNumber=" + idNumber + ", name=" + name + ", surname=" + surname + ", birthDate=" + birthDate
+		return "[ idNumber=" + idNumber + ", name=" + name + ", surname=" + surname + ", birthDate=" + birthDate
 				+ ", age=" + age + ", university=" + university + ", faculty=" + faculty + ", yearOfRegistration="
 				+ yearOfRegistration + "]";
 	}
