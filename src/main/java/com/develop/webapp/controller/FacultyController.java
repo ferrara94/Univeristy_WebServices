@@ -2,6 +2,8 @@ package com.develop.webapp.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,15 +25,22 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @RequestMapping(value = "api/faculties")
 public class FacultyController {
 	
+	Logger logger = LoggerFactory.getLogger(FacultyController.class);
+	
 	@Autowired
 	private FacultyService service;
 	
 	@GetMapping(value = "/all")
 	public ResponseEntity<List<Faculty>> getFaculties() {
 		
+		
+		
 		List<Faculty> faculties = service.getFaculties();
 		
 		if(faculties.isEmpty()) {
+			
+			logger.warn("There is no faculties at the moment");
+			
 			return new ResponseEntity<List<Faculty>>(HttpStatus.NO_CONTENT);
 		}
 		
@@ -42,8 +51,12 @@ public class FacultyController {
 	@PostMapping(value = "faculty/add")
 	public ResponseEntity<?> addStudent(@RequestBody Faculty faculty) {
 		
-		if(faculty == null) 
+		if(faculty == null) { 
+			
+			logger.warn("The faculty object provided is empty|null");
+			
 			return new ResponseEntity<Faculty>(HttpStatus.NO_CONTENT);
+		}
 		
 		Faculty facultyTemp = service.getFaculty(faculty.getName(), faculty.getCurriculum());
 		if(facultyTemp != null) {
@@ -76,6 +89,9 @@ public class FacultyController {
 		
 		
 		if(faculty == null) {
+			
+			logger.warn("There is no faculty with info specified");
+			
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		else { 		
