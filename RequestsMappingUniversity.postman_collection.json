@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\",\n    \"university_id\": \"SALERNO\"\n}",
+							"raw": "{\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -117,10 +117,114 @@
 				{
 					"name": "ADD_STUDENTS",
 					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"MARCO\",\n        \"surname\": \"FILIPPINI\",\n        \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n        \"age\": 27,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n    },\n    {\n        \"name\": \"ANGELO\",\n        \"surname\": \"FILO\",\n        \"birthDate\": \"1995-09-07T22:00:00.000+00:00\",\n        \"age\": 26,\n        \"university\": \"POLIMILANO\",\n        \"faculty\": \"COMPUTER SCIENCE\",\n        \"yearOfRegistration\": \"2014-09-11T22:00:00.000+00:00\"\n    },\n    {\n        \"name\": \"FRANCESCO\",\n        \"surname\": \"MARRA\",\n        \"birthDate\": \"1992-04-05T22:00:00.000+00:00\",\n        \"age\": 29,\n        \"university\": \"BENEVENTO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"yearOfRegistration\": \"2011-09-11T22:00:00.000+00:00\"\n    },\n    {\n        \"name\": \"LUCA\",\n        \"surname\": \"POLLA\",\n        \"birthDate\": \"1997-06-01T22:00:00.000+00:00\",\n        \"age\": 24,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"COMPUTER ENGINEERING\",\n        \"yearOfRegistration\": \"2016-09-11T22:00:00.000+00:00\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_STUDENT_byFILE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": "/home/felice/Scrivania/student.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/uploadStudentByFile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"uploadStudentByFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_STUDENTS_byFILE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": "/home/felice/Scrivania/students.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/uploadStudentsByFile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"uploadStudentsByFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_STUDENTS_FILE",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8080/api/students/download/students/textfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"download",
+								"students",
+								"textfile"
+							]
 						}
 					},
 					"response": []
@@ -247,7 +351,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/students/all",
+							"raw": "http://localhost:8080/api/universities/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -255,7 +359,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"students",
+								"universities",
 								"all"
 							]
 						}
@@ -269,7 +373,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"name\": \"SALERNO\",\n        \"description\": \"The University of Salerno (“UNISA”)is ideally linked to the oldest academic institution in the Old Continent: the Schola Medica Salernitana. Founded in the eighth century AD, the School reached its peak between the 10th and 13th century.\"\n    },\n    {\n        \"name\": \"BENEVENTO\",\n        \"description\": \"The university of Benevento born as a branch of the University of Salerno and acquired full administrative and didactic autonomy starting from 1 January 1998 (DM 29 / 12/1997) as the University of Sannio of Benevento. It is made up of three Departments: Department of Law, Economics, Management and Quantitative Methods, Department of Engineering and Department of Sciences and Technologies.\"\n    }\n]",
+							"raw": "[\n    {\n        \"name\": \"SALERNO\",\n        \"description\": \"The University of Salerno (“UNISA”)is ideally linked to the oldest academic institution in the Old Continent: the Schola Medica Salernitana. Founded in the eighth century AD, the School reached its peak between the 10th and 13th century.\"\n    },\n    {\n        \"name\": \"BENEVENTO\",\n        \"description\": \"The university of Benevento born as a branch of the University of Salerno and acquired full autonomy starting from 1 January 1998. It is made up of three Departments: Department of Law, Economics, Management, Engineering and Sciences and Technologies.\"\n    },\n    {\n        \"name\": \"POLIMILANO\",\n        \"description\": \"Politecnico di Milano is a scientific-technological university which trains engineers and industrial designers. The University has always focused on the quality and innovation of its teaching and research, developing relationship with business world.\"\n    }\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -277,7 +381,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/universities/universities/add",
+							"raw": "http://localhost:8080/api/universities/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -286,7 +390,6 @@
 							"path": [
 								"api",
 								"universities",
-								"universities",
 								"add"
 							]
 						}
@@ -294,6 +397,10 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "employees",
+			"item": []
 		}
 	]
 }
