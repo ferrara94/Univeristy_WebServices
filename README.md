@@ -61,6 +61,17 @@ In addition, there are also functionalities related to **Foreign Key** and **ext
 
 --- 
 
+#### > FILE uploading & generation
+
+I implemented services which allow us to upload and download students information in **FILE.txt** format. 
+
+Files are read and written, in the format **name;surname;date;xxx**, invoking related end-points.
+
+![image](https://user-images.githubusercontent.com/45211249/125109357-89430180-e0e3-11eb-90a8-7bbd225467b7.png)
+
+
+--- 
+
 #### > execution RestServices 
 
 To view the results of web services, I used Postman.
