@@ -1,5 +1,8 @@
 package com.develop.webapp.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +19,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.develop.webapp.entities.Student;
 import com.develop.webapp.service.StudentService;
+import com.develop.webapp.utils.ConvertMfileToFile;
+import com.develop.webapp.utils.CreateStudentsFile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
@@ -151,7 +157,7 @@ public class StudentController {
 	}
 	
 	@DeleteMapping(value = "student/delete/{id}")
-	public  ResponseEntity<?> deleteStudent(@PathVariable Long id) {
+	public ResponseEntity<?> deleteStudent(@PathVariable Long id) {
 		
 		Student student = service.getStudent(id);
 		
@@ -173,6 +179,67 @@ public class StudentController {
 			return new ResponseEntity<>(responseNode, HttpStatus.OK);
 		}
 	}
+	
+	@PostMapping(value = "uploadStudentByFile")
+	public ResponseEntity<?> uploadStudentByFile(@RequestParam("File") MultipartFile file) throws IOException, ParseException {
+		
+		if(file.isEmpty()) {
+			return new ResponseEntity<>("File empty",HttpStatus.NO_CONTENT);
+		}
+		else {
+						
+			Student student = service.extractStudentFromFile((new ConvertMfileToFile(file).getFile() ));
+			
+			service.addStudent(student);
+			
+			ObjectMapper mapper = new ObjectMapper();
+			ObjectNode responseNode = mapper.createObjectNode();
+											
+			responseNode.put("code", HttpStatus.OK.toString());
+			responseNode.put("message", "student " + student.getName() +" successfully added from file");
+			
+			return new ResponseEntity<>(responseNode, HttpStatus.OK);
+		}
+				
+		
+	}
+	
+	@PostMapping(value = "uploadStudentsByFile")
+	public ResponseEntity<?> uploadStudentsByFile(@RequestParam("File") MultipartFile file) throws IOException, ParseException {
+		
+		if(file.isEmpty()) {
+			return new ResponseEntity<>("File empty",HttpStatus.NO_CONTENT);
+		}
+		else {
+						
+			List<Student> students = service.extractStudentsFromFile((new ConvertMfileToFile(file).getFile() ));
+			
+			service.addStudents(students);
+			
+			ObjectMapper mapper = new ObjectMapper();
+			ObjectNode responseNode = mapper.createObjectNode();
+											
+			responseNode.put("code", HttpStatus.OK.toString());
+			responseNode.put("message", "students successfully added from file");
+			
+			return new ResponseEntity<>(responseNode, HttpStatus.OK);
+		}
+				
+		
+	}
+	
+	@GetMapping(value = "download/students/textfile")
+	public ResponseEntity<File> getStudentsFile() throws IOException {
+				
+		CreateStudentsFile csf = new CreateStudentsFile(service.getStudents());
+		File f = csf.createFile();
+
+        return ResponseEntity.ok()
+               .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+f.getName() + "\"")
+      
+               .body(f);
+        
+    }
 	
 
 }

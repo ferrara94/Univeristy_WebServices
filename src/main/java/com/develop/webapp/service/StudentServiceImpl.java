@@ -1,5 +1,8 @@
 package com.develop.webapp.service;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import com.develop.webapp.entities.Student;
 import com.develop.webapp.repository.StudentRepository;
+import com.develop.webapp.utils.ExtractStudentFromFile;
+import com.develop.webapp.utils.ExtractStudentsFromFile;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -61,8 +66,19 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 
-	
-	
+	public Student extractStudentFromFile(File file) throws IOException, ParseException {
+		
+		ExtractStudentFromFile es = new ExtractStudentFromFile(file);
+		
+		return es.getStudent();
+		
+	}
+
+	@Override
+	public List<Student> extractStudentsFromFile(File file) throws IOException, ParseException {
+		ExtractStudentsFromFile es = new ExtractStudentsFromFile(file);
+		return es.getStudents();
+	}	
 	
 
 }

@@ -14,14 +14,13 @@ import com.develop.webapp.entities.Professor;
 @RequestMapping("/api/professors")
 public class ProfessorController {
 
-	@RestController
-	@RequestMapping("/api/professors")
-	public class StudentController {
 		
-		@GetMapping(value = "/all")
-		public ResponseEntity<List<Professor>> getStudents() {
-			return new ResponseEntity<List<Professor>>(HttpStatus.OK);
-		}
+	@GetMapping(value = "/all")
+	public ResponseEntity<List<Professor>> getStudents() {
+		return new ResponseEntity<List<Professor>>(HttpStatus.OK);
+			
 	}
+	
+	
 
 }

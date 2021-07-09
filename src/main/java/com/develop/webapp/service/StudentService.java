@@ -1,5 +1,8 @@
 package com.develop.webapp.service;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -22,5 +25,8 @@ public interface StudentService {
 	public void addStudents(List<Student> students);
 	
 	public Long deleteStudent(Long id);
+	
+	public Student extractStudentFromFile(File file) throws IOException, ParseException;
 
+	public List<Student> extractStudentsFromFile(File file) throws IOException, ParseException;
 }
