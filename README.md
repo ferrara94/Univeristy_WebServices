@@ -63,7 +63,7 @@ In addition, there are also functionalities related to **Foreign Key** and **ext
 
 #### > FILE uploading & generation
 
-I implemented services which allow us to upload and download students information in **FILE.txt** format. 
+I implemented services which allow us to upload (insert into DB) and download students information in **FILE.txt** format. 
 
 Files are read and written, in the format **name;surname;date;xxx**, invoking related end-points.
 
