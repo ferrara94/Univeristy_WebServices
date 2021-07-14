@@ -9,6 +9,119 @@
 			"name": "students",
 			"item": [
 				{
+					"name": "file",
+					"item": [
+						{
+							"name": "GET_STUDENTS_JSON_FILE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/students/download/students/jsonfile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"students",
+										"download",
+										"students",
+										"jsonfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD_STUDENT_byFILE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "File",
+											"type": "file",
+											"src": "/home/felice/Scrivania/student.txt"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/students/uploadStudentByFile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"students",
+										"uploadStudentByFile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD_STUDENTS_byFILE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "File",
+											"type": "file",
+											"src": "/home/felice/Scrivania/students.txt"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/students/uploadStudentsByFile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"students",
+										"uploadStudentsByFile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_STUDENTS_FILE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/students/download/students/textfile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"students",
+										"download",
+										"students",
+										"textfile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "ADD_STUDENT",
 					"request": {
 						"method": "POST",
@@ -139,91 +252,6 @@
 								"api",
 								"students",
 								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ADD_STUDENT_byFILE",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "File",
-									"type": "file",
-									"src": "/home/felice/Scrivania/student.txt"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/students/uploadStudentByFile",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"students",
-								"uploadStudentByFile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ADD_STUDENTS_byFILE",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "File",
-									"type": "file",
-									"src": "/home/felice/Scrivania/students.txt"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/students/uploadStudentsByFile",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"students",
-								"uploadStudentsByFile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET_STUDENTS_FILE",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/students/download/students/textfile",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"students",
-								"download",
-								"students",
-								"textfile"
 							]
 						}
 					},

@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 
 import com.develop.webapp.entities.Student;
 import com.develop.webapp.repository.StudentRepository;
-import com.develop.webapp.utils.ExtractStudentFromFile;
-import com.develop.webapp.utils.ExtractStudentsFromFile;
+import com.develop.webapp.utils.file.ExtractStudentFromFile;
+import com.develop.webapp.utils.file.ExtractStudentsFromFile;
 
 @Service
 public class StudentServiceImpl implements StudentService {

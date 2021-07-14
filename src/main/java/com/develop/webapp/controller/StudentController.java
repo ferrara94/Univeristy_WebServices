@@ -23,8 +23,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.develop.webapp.entities.Student;
 import com.develop.webapp.service.StudentService;
-import com.develop.webapp.utils.ConvertMfileToFile;
-import com.develop.webapp.utils.CreateStudentsFile;
+import com.develop.webapp.utils.file.ConvertMfileToFile;
+import com.develop.webapp.utils.file.CreateStudentsFile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
@@ -232,14 +232,27 @@ public class StudentController {
 	public ResponseEntity<File> getStudentsFile() throws IOException {
 				
 		CreateStudentsFile csf = new CreateStudentsFile(service.getStudents());
-		File f = csf.createFile();
+		File f = csf.createFileText();
 
         return ResponseEntity.ok()
                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+f.getName() + "\"")
-      
                .body(f);
         
     }
+	
+	@GetMapping(value = "download/students/jsonfile")
+	public ResponseEntity<File> getStudentsJsonFile() throws IOException {
+				
+		CreateStudentsFile csf = new CreateStudentsFile(service.getStudents());
+		File f = csf.createFileJson();
+
+        return ResponseEntity.ok()
+               .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+f.getName() + "\"")
+               .body(f);
+        
+    }
+	
+
 	
 
 }
