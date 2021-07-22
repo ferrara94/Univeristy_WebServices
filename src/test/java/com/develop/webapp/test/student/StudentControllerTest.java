@@ -4,6 +4,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.develop.webapp.entities.Student;
+import com.develop.webapp.service.StudentService;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -126,6 +142,9 @@ public class StudentControllerTest {
 	public void D_TestGetStudentByID() throws Exception {
 		
 		String url = "/api/students/student/id/" + "2" ;
+		
+		//Long id = service.getStudentByFullName("marco", "rossi").getIdNumber();
+		Long id = service.getStudentByFullName("ALBERTO", "POLLA").getIdNumber();
 
 		mockMvc.perform(MockMvcRequestBuilders.get(url)
 				.contentType(MediaType.APPLICATION_JSON)
@@ -133,11 +152,49 @@ public class StudentControllerTest {
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				
+				//.andExpect(jsonPath("$.idNumber").exists()) //generate error				
 				.andExpect(jsonPath("$.idNumber").exists()) //check if the first key is present
+				.andExpect(jsonPath("$.idNumber").value(id))
 				
 				.andDo(print())
 			;
 		
+	}
+	
+	@Test
+	public void E_TestDeleteStudentByID() throws Exception {
+		
+		String url = "/api/students/student/delete/" + "2" ;
+		
+		//System.err.println(service.getStudent((long) 2));
+		
+		mockMvc.perform(MockMvcRequestBuilders.delete(url)
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())		
+				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+				.andDo(print())
+			;
+		
+		
+				
+	}
+	
+	@Test
+	public void F_TestDeleteStudentByIDNull() throws Exception {
+		
+		String url = "/api/students/student/delete/" + "2" ;
+		
+		//System.err.println(service.getStudent((long) 2));
+		
+		mockMvc.perform(MockMvcRequestBuilders.delete(url)
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNoContent() )		
+				.andDo(print())
+			;
+		
+		assertThat(service.getStudent((long) 2)).isNull();
+		
+				
 	}
 	
 		 
