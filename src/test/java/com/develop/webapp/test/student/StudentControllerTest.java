@@ -1,25 +1,10 @@
 package com.develop.webapp.test.student;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.assertj.core.api.Assertions.assertThat;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.LinkedList;
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import com.develop.webapp.entities.Student;
-import com.develop.webapp.service.StudentService;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -47,7 +32,12 @@ import com.develop.webapp.service.StudentService;
 	do that, we use @FixMethodOrder() annotation
 	if you need to execute test in order, and to be sure, 
 	let's put as a suffix letters A, B, C etc...
+	
+	With JUnit 5, we will have the new Annotation @TestMethodOrder(OrderAnnotation.class)
+	and the @Order(n) annotation on the test method where n = 1,2,3...
+	
 */
+
 
 @RunWith(SpringRunner.class)
 //@ContextConfiguration()
@@ -74,10 +64,11 @@ public class StudentControllerTest {
 		if(!isInitialized) { //in order to not repeat for each test
 			
 		}
-		
-				
+					
 	}
 	
+	
+    
 	@Test
 	public void A_TestGetStudents() throws Exception {
 		
@@ -207,5 +198,7 @@ public class StudentControllerTest {
 			+ "    \"faculty\": \"MECHANIC ENGINEERING\",\n"
 			+ "    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n"
 			+ "}";
+	
+	
 	
 }
