@@ -35,7 +35,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping(value = "add")
-	public ResponseEntity<List<Employee>> addUniversity(@RequestBody List<Employee> employees) {
+	public ResponseEntity<List<Employee>> addEmployees(@RequestBody List<Employee> employees) {
 		
 		if(employees == null) {
 			return new ResponseEntity<List<Employee>>(HttpStatus.NO_CONTENT);
