@@ -79,6 +79,23 @@ public class FacultyController {
 		
 	}
 	
+	@PostMapping(value = "faculties/add")
+	public ResponseEntity<List<Faculty>> addUniversity(@RequestBody List<Faculty> faculties) {
+		
+		if(faculties == null) {
+			return new ResponseEntity<List<Faculty>>(HttpStatus.NO_CONTENT);
+		}
+				
+		for(Faculty f: faculties) {
+			f.setName(f.getName().toUpperCase());
+		}
+								
+		service.addFaculties(faculties);
+		
+		return new ResponseEntity<List<Faculty>>(new HttpHeaders(), HttpStatus.CREATED);
+		
+	}
+	
 	/*
 	 http://localhost:8080/api/faculties/faculty/delete?name=xxx&curriculum=yyy 
 	*/

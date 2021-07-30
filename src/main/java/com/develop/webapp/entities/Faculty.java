@@ -1,31 +1,38 @@
 package com.develop.webapp.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.OneToMany;
 
 @Entity
-@IdClass(Enrollment.class)
+//@IdClass(Enrollment.class)
 public class Faculty implements Serializable{
 
 	private static final long serialVersionUID = 4730522190457907955L;
 	
 	@Id
+	@Column(name = "codId")
+	private String codId; 
+	
 	@Column(name = "FACULTY_NAME")
 	private String name;
-	@Id
+	
 	@Column(name = "CURRICULUM")
 	private String curriculum;
 	
 	private String description;
 	private int yearsOfStudy;
+		
 	
-			
-	public Faculty(String name, String description, String curriculum, int yearsOfStudy) {
-		super();
+	@OneToMany(mappedBy = "codId")
+	private List<Student> students;
+				
+	public Faculty(String codId, String name, String description, String curriculum, int yearsOfStudy) {
+		this.codId = codId;
 		this.name = name;
 		this.description = description;
 		this.curriculum = curriculum;
@@ -35,6 +42,18 @@ public class Faculty implements Serializable{
 	
 	public Faculty() {}
 	
+	
+	
+	public String getCodId() {
+		return codId;
+	}
+
+
+	public void setCodId(String codId) {
+		this.codId = codId;
+	}
+
+
 	public String getName() {
 		return name;
 	}
@@ -60,7 +79,15 @@ public class Faculty implements Serializable{
 		this.yearsOfStudy = yearsOfStudy;
 	}
 
-	
-	
-	
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+
 }

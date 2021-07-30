@@ -1,33 +1,29 @@
 package com.develop.webapp.entities;
 
-import java.util.Date;
-import java.util.UUID;
-
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class Professor extends Person{
 
 	private static final long serialVersionUID = 3035097401880148591L;
-
-	@Id
-	private UUID idNumber;
-	private String position;
-	private Faculty faculty;
-	private int yearsService;
-	private String degree;
 	
-	public Professor(UUID id, String name, String surname, Date birthDate, int age, String position, Faculty faculty,
-			int yearsService, String degree) {
-		
-		super(id, name, surname, birthDate, age);
-		this.idNumber = id;
+	private String university;
+	private String faculty;
+	private String position;
+	private int yearsService;
+	private String degree;	
+	
+	
+	public Professor(String name, String surname, String university, String position, String faculty, int yearsService, String degree) {
+		super(name, surname);
 		this.position = position;
+		this.university = university;
 		this.faculty = faculty;
 		this.yearsService = yearsService;
 		this.degree = degree;
 	}
+	
+	public Professor() {}
 
 	public String getPosition() {
 		return position;
@@ -37,11 +33,11 @@ public class Professor extends Person{
 		this.position = position;
 	}
 
-	public Faculty getFaculty() {
+	public String getFaculty() {
 		return faculty;
 	}
 
-	public void setFaculty(Faculty faculty) {
+	public void setFaculty(String faculty) {
 		this.faculty = faculty;
 	}
 
@@ -59,6 +55,14 @@ public class Professor extends Person{
 
 	public void setDegree(String degree) {
 		this.degree = degree;
+	}
+
+	public String getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(String university) {
+		this.university = university;
 	}
 	
 	

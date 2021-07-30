@@ -40,4 +40,9 @@ public class FacultyServiceImpl implements FacultyService{
 		 return name;
 	}
 
+	@Override
+	public void addFaculties(List<Faculty> faculties) {
+		facultyRepository.saveAll(faculties);		
+	}
+
 }

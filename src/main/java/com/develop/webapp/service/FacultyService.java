@@ -14,6 +14,8 @@ public interface FacultyService {
 	
 	public void addFaculty(Faculty faculty);
 	
+	public void addFaculties(List<Faculty> faculty);
+	
 	public String deleteFaculty(String name, String curriculum);
 
 }

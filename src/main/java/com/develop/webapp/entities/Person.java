@@ -2,34 +2,47 @@ package com.develop.webapp.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-public  class Person implements Serializable{
+@MappedSuperclass
+public class Person implements Serializable{
 	
 	private static final long serialVersionUID = -1532951710012009701L;
 	
-	private UUID id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
 	private String name;
 	private String surname;
 	private Date birthDate;
 	private int age;
+	
+	
 		
-	public Person(UUID id, String name, String surname, Date birthDate, int age) {
+	public Person(String name, String surname) {
 		super();
-		this.id = id;
+		this.name = name;
+		this.surname = surname;
+	}
+
+	public Person(String name, String surname, Date birthDate, int age) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;
 		this.age = age;
 	}
 	
-	//public Person() {}
+	public Person() {}
 	
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

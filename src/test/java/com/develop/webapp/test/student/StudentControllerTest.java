@@ -135,7 +135,7 @@ public class StudentControllerTest {
 		String url = "/api/students/student/id/" + "2" ;
 		
 		//Long id = service.getStudentByFullName("marco", "rossi").getIdNumber();
-		Long id = service.getStudentByFullName("ALBERTO", "POLLA").getIdNumber();
+		Long id = service.getStudentByFullName("ALBERTO", "POLLA").getId();
 
 		mockMvc.perform(MockMvcRequestBuilders.get(url)
 				.contentType(MediaType.APPLICATION_JSON)

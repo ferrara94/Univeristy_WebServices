@@ -109,8 +109,11 @@ public class StudentController {
 		
 		student.setName(student.getName().toUpperCase());
 		
-		if(student.getIdNumber() == null) 
-			student.setIdNumber((long)999);
+		if(student.getId() == null) 
+			student.setId((long)999);
+		
+		//student.setCodId("COMPUTER SCIENCE-CLOUD COMPUTING");
+		
 		
 		service.addStudent(student);
 		
@@ -125,9 +128,11 @@ public class StudentController {
 			return new ResponseEntity<List<Student>>(HttpStatus.NO_CONTENT);
 		}
 				
-		for(Student s: students)
+		for(Student s: students) {
 			s.setName(s.getName().toUpperCase());
-						
+			//s.setCodId(s.getUniversity() + "-" + s.getFaculty());
+		}
+								
 		service.addStudents(students);
 		
 		return new ResponseEntity<List<Student>>(new HttpHeaders(), HttpStatus.CREATED);
@@ -138,7 +143,7 @@ public class StudentController {
 	public ResponseEntity<?> updateStudent(@RequestBody Student student ) {
 		
 				
-		if(service.getStudent(student.getIdNumber()) == null) {
+		if(service.getStudent(student.getId()) == null) {
 			return new ResponseEntity<Student>(HttpStatus.NO_CONTENT);
 		}
 		else {
@@ -149,7 +154,7 @@ public class StudentController {
 						
 			responseNode.put("code", HttpStatus.OK.toString());
 			responseNode.put("message", "student " + student.getName() + " with ID_NUMBER " +
-					student.getIdNumber() + " successfully modified");
+					student.getId() + " successfully modified");
 		
 			return new ResponseEntity<>(responseNode, HttpStatus.CREATED);
 		}
@@ -174,7 +179,7 @@ public class StudentController {
 						
 			responseNode.put("code", HttpStatus.OK.toString());
 			responseNode.put("message", "student " + student.getName() + " with ID_NUMBER " +
-					student.getIdNumber() + " successfully removed");
+					student.getId() + " successfully removed");
 		
 			return new ResponseEntity<>(responseNode, HttpStatus.OK);
 		}

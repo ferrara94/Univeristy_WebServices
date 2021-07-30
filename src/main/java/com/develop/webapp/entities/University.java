@@ -16,7 +16,6 @@ public class University implements Serializable {
 	private static final long serialVersionUID = 613534639803679752L;
 
 	@Id
-	@Column(name = "STUDENT_ID")
 	private String name;
 	
 	@Column(name = "DESCRIPTION")
