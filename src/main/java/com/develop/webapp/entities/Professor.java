@@ -1,6 +1,9 @@
 package com.develop.webapp.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Professor extends Person{
@@ -13,6 +16,9 @@ public class Professor extends Person{
 	private int yearsService;
 	private String degree;	
 	
+	@OneToMany(mappedBy = "prof")
+	private List<Course> courses;
+	
 	
 	public Professor(String name, String surname, String university, String position, String faculty, int yearsService, String degree) {
 		super(name, surname);
@@ -22,7 +28,7 @@ public class Professor extends Person{
 		this.yearsService = yearsService;
 		this.degree = degree;
 	}
-	
+		
 	public Professor() {}
 
 	public String getPosition() {
@@ -63,6 +69,14 @@ public class Professor extends Person{
 
 	public void setUniversity(String university) {
 		this.university = university;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 	
 	

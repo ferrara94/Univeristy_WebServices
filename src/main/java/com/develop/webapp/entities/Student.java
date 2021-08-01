@@ -2,10 +2,13 @@ package com.develop.webapp.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity 
@@ -22,6 +25,9 @@ public class Student extends Person implements Serializable{
 	private Date yearOfRegistration;
 		
 	private String codId;
+	
+	@ManyToMany(mappedBy = "students")
+	private Set<Course> courses = new HashSet<>();
 		    
 	public Student() {}		
 		
@@ -32,7 +38,6 @@ public class Student extends Person implements Serializable{
 	}
 
 
-
 	public Student(String name, String surname, Date birthDate, int age, String university, String faculty,
 			Date yearOfRegistration, String codId) {
 		super(name, surname, birthDate, age);
@@ -40,6 +45,7 @@ public class Student extends Person implements Serializable{
 		this.faculty = faculty;
 		this.yearOfRegistration = yearOfRegistration;
 		this.codId = codId;
+		
 	}
 
 

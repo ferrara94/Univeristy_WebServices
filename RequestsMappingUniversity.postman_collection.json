@@ -128,7 +128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n}",
+							"raw": "{\n    \"name\": \"MARCO\",\n    \"surname\": \"FILIPPINI\",\n    \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n    \"age\": 27,\n    \"university\": \"SALERNO\",\n    \"faculty\": \"MECHANIC ENGINEERING\",\n    \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\",\n    \"codId\": \"MECHANIC ENGINEERING-MECHANIC DESIGN\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"name\": \"MARCO\",\n        \"surname\": \"FILIPPINI\",\n        \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n        \"age\": 27,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\"\n    },\n    {\n        \"name\": \"ANGELO\",\n        \"surname\": \"FILO\",\n        \"birthDate\": \"1995-09-07T22:00:00.000+00:00\",\n        \"age\": 26,\n        \"university\": \"POLIMILANO\",\n        \"faculty\": \"COMPUTER SCIENCE\",\n        \"yearOfRegistration\": \"2014-09-11T22:00:00.000+00:00\"\n    },\n    {\n        \"name\": \"FRANCESCO\",\n        \"surname\": \"MARRA\",\n        \"birthDate\": \"1992-04-05T22:00:00.000+00:00\",\n        \"age\": 29,\n        \"university\": \"BENEVENTO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"yearOfRegistration\": \"2011-09-11T22:00:00.000+00:00\"\n    },\n    {\n        \"name\": \"LUCA\",\n        \"surname\": \"POLLA\",\n        \"birthDate\": \"1997-06-01T22:00:00.000+00:00\",\n        \"age\": 24,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"COMPUTER ENGINEERING\",\n        \"yearOfRegistration\": \"2016-09-11T22:00:00.000+00:00\"\n    }\n]",
+							"raw": "[\n    {\n        \"name\": \"MARCO\",\n        \"surname\": \"FILIPPINI\",\n        \"birthDate\": \"1994-07-08T22:00:00.000+00:00\",\n        \"age\": 27,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"yearOfRegistration\": \"2013-09-11T22:00:00.000+00:00\",\n        \"codId\": \"MECHANIC ENGINEERING-MECHANIC DESIGN\"\n    },\n    {\n        \"name\": \"ANGELO\",\n        \"surname\": \"FILO\",\n        \"birthDate\": \"1995-09-07T22:00:00.000+00:00\",\n        \"age\": 26,\n        \"university\": \"POLIMILANO\",\n        \"faculty\": \"COMPUTER SCIENCE\",\n        \"yearOfRegistration\": \"2014-09-11T22:00:00.000+00:00\",\n        \"codId\": \"COMPUTER SCIENCE-CLOUD COMPUTING\"\n    },\n    {\n        \"name\": \"FRANCESCO\",\n        \"surname\": \"MARRA\",\n        \"birthDate\": \"1992-04-05T22:00:00.000+00:00\",\n        \"age\": 29,\n        \"university\": \"BENEVENTO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"yearOfRegistration\": \"2011-09-11T22:00:00.000+00:00\",\n        \"codId\": \"MECHANIC ENGINEERING-MECHANIC DESIGN\"\n    },\n    {\n        \"name\": \"LUCA\",\n        \"surname\": \"POLLA\",\n        \"birthDate\": \"1997-06-01T22:00:00.000+00:00\",\n        \"age\": 24,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"COMPUTER ENGINEERING\",\n        \"yearOfRegistration\": \"2016-09-11T22:00:00.000+00:00\",\n        \"codId\": \"COMPUTER ENGINEERING-SYSTEM DESIGN\"\n    }\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -290,7 +290,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"COMPUTER SCIENCE\",\n    \"description\": \"Cloud Computing course helps you master the core skill sets required to design and deploy dynamically scalable and reliable applications on three popular cloud platform providers: Microsoft Azure, AWS, and GCP.\",\n    \"curriculum\": \"\",\n    \"yearsOfStudy\": 2\n}",
+							"raw": "{\n    \"codId\": \"COMPUTER SCIENCE-CLOUD COMPUTING\",\n    \"name\": \"COMPUTER SCIENCE\",\n    \"curriculum\": \"CLOUD COMPUTING\",\n    \"description\": \"Cloud Computing course helps you master the core skill sets required to design and deploy dynamically scalable and reliable applications on three popular cloud platform providers: Microsoft Azure, AWS, and GCP.\",\n    \"yearsOfStudy\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -332,6 +332,37 @@
 								"faculty",
 								"delete",
 								"COMPUTER SCIENCE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_FACULTIES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"codId\": \"COMPUTER SCIENCE-CLOUD COMPUTING\",\n        \"name\": \"COMPUTER SCIENCE\",\n        \"curriculum\": \"CLOUD COMPUTING\",\n        \"description\": \"Cloud Computing course helps you master the core skill sets required to design and deploy dynamically scalable and reliable applications on three popular cloud platform providers: Microsoft Azure, AWS, and GCP.\",\n        \"yearsOfStudy\": 2\n    },\n    {\n        \"codId\": \"MECHANIC ENGINEERING-MECHANIC DESIGN\",\n        \"name\": \"MECHANIC ENGINEERING\",\n        \"curriculum\": \"MECHANIC DESIGN\",\n        \"description\": \"The Mechanical Engineering Course trains a professional with a strong basic technical knowledge in industrial engineering field, with specific skills in mechanics.\",\n        \"yearsOfStudy\": 2\n    },\n    {\n        \"codId\": \"COMPUTER ENGINEERING-SYSTEM DESIGN\",\n        \"name\": \"COMPUTER ENGINEERING\",\n        \"curriculum\": \"SYSTEM DESIGN\",\n        \"description\": \"The programme emphasises solid, basic technical preparation in all cultural areas of Computer Engineering, enabling rapid adaptation to diverse professional needs and avoiding the risk of rapid obsolescence of training.\",\n        \"yearsOfStudy\": 2\n    }\n\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/faculties/faculties/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"faculties",
+								"faculties",
+								"add"
 							]
 						}
 					},
@@ -428,7 +459,171 @@
 		},
 		{
 			"name": "employees",
-			"item": []
+			"item": [
+				{
+					"name": "ADD_EMPLOYEES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"FRANCESCO\",\n        \"surname\": \"MOROSO\",\n        \"birthDate\": \"1994-02-08T22:00:00.000+00:00\",\n        \"age\": 27,\n        \"workingPosition\": \"office worker\", \n        \"yearsService\": 3,\n        \"hoursOfWork\": 40,\n        \"company\": \"university\"\n    },\n    {\n        \"name\": \"ERMELINDA\",\n        \"surname\": \"PIROLO\",\n        \"birthDate\": \"1974-02-08T22:00:00.000+00:00\",\n        \"age\": 47,\n        \"workingPosition\": \"receptionist\", \n        \"yearsService\": 12,\n        \"hoursOfWork\": 40,\n        \"company\": \"university\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employees/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_EMPLOYEES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employees/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employees",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "professors",
+			"item": [
+				{
+					"name": "ADD_PROFESSORS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"LUCA\",\n        \"surname\": \"GARCIA\",\n        \"birthDate\": \"1974-07-08T22:00:00.000+00:00\",\n        \"age\": 47,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"MECHANIC ENGINEERING\",\n        \"position\": \"FULL PROFESSOR\",\n        \"yearsService\": 11,\n        \"degree\": \"MECHANIC ENGINEERING-MECHANIC DESIGN\"\n    },\n    {\n        \"name\": \"ANTONIO\",\n        \"surname\": \"FILAS\",\n        \"birthDate\": \"1985-11-07T22:00:00.000+00:00\",\n        \"age\": 36,\n        \"university\": \"POLIMILANO\",\n        \"faculty\": \"COMPUTER SCIENCE\",\n        \"position\": \"ASSOCIATE\",\n        \"yearsService\": 11,\n        \"degree\": \"COMPUTER SCIENCE-CLOUD COMPUTING\"\n    },\n    {\n        \"name\": \"MARK\",\n        \"surname\": \"HARRISON\",\n        \"birthDate\": \"1975-02-02T22:00:00.000+00:00\",\n        \"age\": 46,\n        \"university\": \"SALERNO\",\n        \"faculty\": \"COMPUTER SCIENCE\",\n        \"position\": \"CONTRACTOR\",\n        \"yearsService\": 21,\n        \"degree\": \"ENGLISH LITERATURE\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/professors/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"professors",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PROFESSORS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/professors/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"professors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "GET_COURSES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/courses/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"courses",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD_COURSES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"object oriented programming\",\n        \"hours\": 48,\n        \"prof\" : 2\n    },\n    {\n        \"name\": \"english\",\n        \"hours\": 36,\n        \"prof\" : 3\n    },\n    {\n        \"name\": \"applied physics\",\n        \"hours\": 56,\n        \"prof\" : 1\n    },\n    {\n        \"name\": \"data structures\",\n        \"hours\": 48,\n        \"prof\" : 2\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/courses/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"courses",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

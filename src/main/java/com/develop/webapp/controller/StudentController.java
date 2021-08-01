@@ -112,8 +112,7 @@ public class StudentController {
 		if(student.getId() == null) 
 			student.setId((long)999);
 		
-		//student.setCodId("COMPUTER SCIENCE-CLOUD COMPUTING");
-		
+		//todo add information in student_enrolled table
 		
 		service.addStudent(student);
 		
@@ -132,6 +131,9 @@ public class StudentController {
 			s.setName(s.getName().toUpperCase());
 			//s.setCodId(s.getUniversity() + "-" + s.getFaculty());
 		}
+		
+		//todo add information in student_enrolled table
+
 								
 		service.addStudents(students);
 		
