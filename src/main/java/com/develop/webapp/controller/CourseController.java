@@ -34,6 +34,23 @@ public class CourseController {
 		return new ResponseEntity<List<Course>>(courses,HttpStatus.OK);
 	}
 	
+	@PostMapping(value = "course/add")
+	public ResponseEntity<Course> addStudent(@RequestBody Course course) {
+		
+		if(course == null) 
+			return new ResponseEntity<Course>(HttpStatus.NO_CONTENT);
+		 
+		
+		course.setName(course.getName().toUpperCase());
+		
+		//todo add information in student_enrolled table
+		
+		service.addCourse(course);
+		
+		return new ResponseEntity<Course>(new HttpHeaders(), HttpStatus.CREATED);
+		
+	}
+	
 	@PostMapping(value = "add")
 	public ResponseEntity<List<Course>> addCourses(@RequestBody List<Course> courses) {
 		

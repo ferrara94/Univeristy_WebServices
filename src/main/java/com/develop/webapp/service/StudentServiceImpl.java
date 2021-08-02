@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +24,13 @@ public class StudentServiceImpl implements StudentService {
 	StudentRepository studentRepository;
 
 	@Override
+	@Transactional
 	public List<Student> getStudents() {
 		return studentRepository.findAll();
 	}
 
 	@Override
+	@Transactional
 	public Student getStudent(Long id) {
 		
 		Optional<Student> student = studentRepository.findById(id);
@@ -35,32 +39,38 @@ public class StudentServiceImpl implements StudentService {
 	}
 	
 	@Override
+	@Transactional
 	public Student getStudentByName(String name) {
 		return studentRepository.findByName(name);
 	}
 	
 	@Override
+	@Transactional
 	public Student getStudentByFullName(String name, String surname) {
 		return studentRepository.findByNameAndSurname(name, surname);
 	}
 	
 	@Override
+	@Transactional
 	public List<Student> getStudentByBirthDate(Date birthDate) {
 		return studentRepository.selectStudentByBirthDate(birthDate);
 	}
 
 	@Override
+	@Transactional
 	public void addStudent(Student student) {
 		studentRepository.save(student);		
 	}
 
 	@Override
+	@Transactional
 	public Long deleteStudent(Long id) {
 		studentRepository.deleteById(id);;
 		return id;
 	}
 
 	@Override
+	@Transactional
 	public void addStudents(List<Student> students) {
 		studentRepository.saveAll(students);
 		
@@ -75,6 +85,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
+	@Transactional
 	public List<Student> extractStudentsFromFile(File file) throws IOException, ParseException {
 		ExtractStudentsFromFile es = new ExtractStudentsFromFile(file);
 		return es.getStudents();

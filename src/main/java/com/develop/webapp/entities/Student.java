@@ -2,14 +2,16 @@ package com.develop.webapp.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity 
 @Table(name = "STUDENT")
@@ -27,7 +29,8 @@ public class Student extends Person implements Serializable{
 	private String codId;
 	
 	@ManyToMany(mappedBy = "students")
-	private Set<Course> courses = new HashSet<>();
+	@JsonIgnore
+	private List<Course> courses = new LinkedList<>();
 		    
 	public Student() {}		
 		
@@ -75,6 +78,18 @@ public class Student extends Person implements Serializable{
 
 	public void setCodId(String codId) {
 		this.codId = codId;
+	}
+	
+	
+
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 

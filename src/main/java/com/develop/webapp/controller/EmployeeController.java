@@ -35,7 +35,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping(value = "add")
-	public ResponseEntity<List<Employee>> addUniversity(@RequestBody List<Employee> employees) {
+	public ResponseEntity<List<Employee>> addEmployees(@RequestBody List<Employee> employees) {
 		
 		if(employees == null) {
 			return new ResponseEntity<List<Employee>>(HttpStatus.NO_CONTENT);
@@ -47,6 +47,20 @@ public class EmployeeController {
 		service.addEmployees(employees);
 		
 		return new ResponseEntity<List<Employee>>(new HttpHeaders(), HttpStatus.CREATED);
+		
+	}
+	
+	@PostMapping(value = "employee/add")
+	public ResponseEntity<Employee> testTransaction(@RequestBody Employee employee) {
+		
+				
+		if(employee == null) {
+			return new ResponseEntity<Employee>(HttpStatus.NO_CONTENT);
+		}
+		
+		service.addEmployee(employee);		
+		
+		return new ResponseEntity<Employee>(new HttpHeaders(), HttpStatus.CREATED);
 		
 	}
 	

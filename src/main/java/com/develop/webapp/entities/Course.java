@@ -1,8 +1,8 @@
 package com.develop.webapp.entities;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,7 +32,7 @@ public class Course implements Serializable {
 				joinColumns = @JoinColumn(name = "id_course"),
 				inverseJoinColumns = @JoinColumn(name = "id_student")
 			)
-	Set<Student> students = new HashSet<>();
+	List<Student> students = new LinkedList<>();
 
 	public Course(String name, int hours) {
 		this.name = name;
@@ -74,11 +74,11 @@ public class Course implements Serializable {
 		this.prof = prof;
 	}
 
-	public Set<Student> getStudents() {
+	public List<Student> getStudents() {
 		return students;
 	}
 
-	public void setStudents(Set<Student> students) {
+	public void setStudents(List<Student> students) {
 		this.students = students;
 	}	
 	
