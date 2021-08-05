@@ -39,6 +39,7 @@ where the *project* is located (into the project folder)
 - [ ] JUnit 4/5
 - [ ] H2 database
 - [ ] Spring Web Modules
+- [ ] Spring Actuator
 - [ ] Tomcat (provided by SpringBoot)
 
 ---
