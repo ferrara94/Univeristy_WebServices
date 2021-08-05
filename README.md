@@ -71,7 +71,7 @@ I implemented services which allow us to upload (insert into DB) and download st
 
 Files are read and written, in the format **name;surname;date;xxx**, invoking related end-points.
 
-![image](https://user-images.githubusercontent.com/45211249/125109357-89430180-e0e3-11eb-90a8-7bbd225467b7.png)
+![Schermata del 2021-08-05 17-29-20](https://user-images.githubusercontent.com/45211249/128377448-4ff7c4ac-b4a7-42ec-a2f1-d4eb2bacce04.png)
 
 
 --- 
