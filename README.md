@@ -82,7 +82,7 @@ To view the results of web services, I used Postman.
 
 - [ ] **Add the Student by calling the Rest Service through Postman**
 
-![image](https://user-images.githubusercontent.com/45211249/123134992-a0ca8b00-d451-11eb-9764-9554a6e40c01.png)
+![Schermata del 2021-08-05 17-26-22](https://user-images.githubusercontent.com/45211249/128376943-02e4bf71-01e1-4c06-8ead-cf53ad1845de.png)
 
 - [ ] **Check all Students on Database**
 
@@ -90,8 +90,8 @@ To view the results of web services, I used Postman.
 
 - [ ] **Retrieve all Students by calling the Rest Service through Postman**
 
-![image](https://user-images.githubusercontent.com/45211249/123135042-ab852000-d451-11eb-8ed6-b46f94e2cba6.png)
+![Schermata del 2021-08-05 17-25-26](https://user-images.githubusercontent.com/45211249/128376716-250e0733-6f27-4ce2-bdcf-575253248a01.png)
 
 - [ ] **Delete the Student by calling the Rest Service through Postman**
 
-![image](https://user-images.githubusercontent.com/45211249/123135063-af18a700-d451-11eb-907a-fef54b80e97f.png)
+![Schermata del 2021-08-05 17-27-37](https://user-images.githubusercontent.com/45211249/128377148-0af9b1c7-4c7c-4643-89af-28e7b579c5ad.png)
