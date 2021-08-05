@@ -44,10 +44,13 @@ where the *project* is located (into the project folder)
 ---
 #### > entities 
 
-- [ ] Student
-- [ ] Professor
+- [ ] Course
 - [ ] Employee
 - [ ] Faculty
+- [ ] Professor
+- [ ] Student
+- [ ] Student_enrolled
+- [ ] University 
 
 #### > persistence & repository 
 
@@ -57,7 +60,7 @@ Classes which implements JPA interfaces have the **Repository** at the end of th
 
 In addition, there are also functionalities related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
 
-![image](https://user-images.githubusercontent.com/45211249/124036097-c4677580-d9fd-11eb-9eba-11f1dc784bbd.png)
+![Schermata del 2021-08-05 17-21-08](https://user-images.githubusercontent.com/45211249/128376030-3bfba1ae-3a32-458d-9317-3f7dacfe79da.png)
 
 
 --- 
