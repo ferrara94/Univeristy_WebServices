@@ -1,36 +1,36 @@
-# Univeristy_WebServices
+# 🎓 University WebServices - RESTful APIs for Academic Systems
+## Overview
+
+**University WebServices** is a RESTful backend application built with Java and Spring Boot, designed to simulate key services within a university ecosystem. 
+It provides an API layer that models core university entities and exposes endpoints for basic operations. As distinct from a Microservice Architecture, we followed a "Monolithic-based" approach.
+
+**Need to simulate university services?** 🎓 Test them instantly with University_WebServices!
 
 ---
 
-#### > about
+## ▶️ Run the Application
+💡 Tip: There are two simple ways to run the application — via IDE or command line.
 
-Web Services Rest designed and developed using Java/Spring technologies.
+### Using Spring Tool Suite (STS)
+- Open the project in Spring Tool Suite
+- Right-click on the project folder
+- Select:
 
-The Services are related to University World, but they are based on a limited number of entities. 
-
-The project is a **SpringBoot** project, so most of the Configurations are provided by default.
-
-**RequestsMappingUniversity.postman_collection** is a collection of RequestMapping in postman which you can use direclty to test the services.
-
-
-
----
-
-#### > run app
-
-In my case, using Spring Tool Suit, to run my app I open it and
 ```
   right click on project + run as Spring Boot App
 ```
-Another way is to launch from command line
+
+### Using Command Line
+- Open a terminal and navigate to the root project directory
+- Run the following command:
+
 ```
   mvn spring-boot:run
 ```
-where the *project* is located (into the project folder)
 
 ---
 
-#### > technologies, libraries & representations
+## Technologies Used
 
 - [ ] Java 11
 - [ ] JPA
@@ -43,26 +43,35 @@ where the *project* is located (into the project folder)
 - [ ] Tomcat (provided by SpringBoot)
 
 ---
-#### > entities 
 
-- [ ] Course
-- [ ] Employee
-- [ ] Faculty
-- [ ] Professor
-- [ ] Student
-- [ ] Student_enrolled
-- [ ] University 
+## Entities
+The application models key components of a university environment through the following entities:
 
-#### > persistence & repository 
+- [ ] 📚 Course
+- [ ] 👩‍💼 Employee
+- [ ] 🏛️ Faculty
+- [ ] 🎓 Professor
+- [ ] 👨‍🎓 Student
+- [ ] 📝 Student_Enrolled
+- [ ] 🏫 University
 
-Persistence is represented by the in-memory database called H2 Database.
-
-Classes which implements JPA interfaces have the **Repository** at the end of the name and they allow access to data.
-
-In addition, there are also functionalities related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
+Each entity represents a part of the university domain and participates in relevant relationships.
 
 ![Schermata del 2021-08-05 17-21-08](https://user-images.githubusercontent.com/45211249/128376030-3bfba1ae-3a32-458d-9317-3f7dacfe79da.png)
 
+
+---
+
+## 🗄️ Persistence & Repository
+
+- The project uses an H2 in-memory database to manage data during runtime — ideal for testing and development.
+- Data access is handled through Spring Data JPA, with repository classes named following the pattern EntityNameRepository. These repositories simplify database operations and provide built-in CRUD support.
+
+
+Additionally, the application supports key JPA relationships, such as:
+- @OneToOne
+- @OneToMany
+- @ManyToOne
 
 --- 
 
@@ -79,7 +88,8 @@ Files are read and written, in the format **name;surname;date;xxx**, invoking re
 
 #### > execution RestServices 
 
-To view the results of web services, I used Postman.
+To view the results of web services, I used Postman. 
+**RequestsMappingUniversity.postman_collection** is a collection of RequestMapping in postman which you can use direclty to test the services.
 
 - [ ] **Add the Student by calling the Rest Service through Postman**
 
